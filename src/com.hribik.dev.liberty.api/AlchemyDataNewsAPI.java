@@ -94,14 +94,17 @@ public class AlchemyDataNewsAPI {
 	HttpGet httpGet = new HttpGet(urlGetNews+"?"+params);
 	response1 = httpclient.execute(httpGet);
 					
-	System.out.println(response1.getStatusLine());
+	System.out.println("Result Response:" + response1.getStatusLine());
 					
 	HttpEntity entity1 = response1.getEntity();
 	String result = EntityUtils.toString(entity1);
+	System.out.println("The Result:" + result);
 	
 	Gson gson = new Gson();
 	JsonObject alchemyJsonObject = gson.fromJson(result, JsonObject.class);
+	System.out.println("alchemyJsonObject: " + ((alchemJsonObject == null) ? " is NULL" : " is NOT NULL"));
 	JsonObject resultJsonObject = alchemyJsonObject.get("result").getAsJsonObject();
+	System.out.println("resultJsonObject: " + ((resultJsonObject == null) ? " is NULL" : " is NOT NULL"));
 	alchemyDocs = resultJsonObject.get("docs").getAsJsonArray();
 			
     } catch(IOException ioe){
