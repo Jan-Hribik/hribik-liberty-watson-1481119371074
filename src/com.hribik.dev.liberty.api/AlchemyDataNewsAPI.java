@@ -102,7 +102,7 @@ public class AlchemyDataNewsAPI {
 	
 	Gson gson = new Gson();
 	JsonObject alchemyJsonObject = gson.fromJson(result, JsonObject.class);
-	System.out.println("alchemyJsonObject: " + ((alchemJsonObject == null) ? " is NULL" : " is NOT NULL"));
+	System.out.println("alchemyJsonObject: " + ((alchemyJsonObject == null) ? " is NULL" : " is NOT NULL"));
 	JsonObject resultJsonObject = alchemyJsonObject.get("result").getAsJsonObject();
 	System.out.println("resultJsonObject: " + ((resultJsonObject == null) ? " is NULL" : " is NOT NULL"));
 	alchemyDocs = resultJsonObject.get("docs").getAsJsonArray();
