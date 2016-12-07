@@ -1,0 +1,11 @@
+applications:
+- path: JavaCloudantApp.war
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: hribik-liberty-watson
+  host: hribik-liberty-watson
+  disk_quota: 1024M
+  services:
+  - AlchemyAPI-rf
+  - hribik-liberty-watson-cloudantNoSQLDB
